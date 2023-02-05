@@ -15,7 +15,7 @@
 				"allowSingleExtends": true
 			}
 		],
-		"indent": ["warn", 4, { "SwitchCase": 1 }]
+		"indent": ["warn", "tab", { "SwitchCase": 1 }]
 		
 	},
 	"extends":[
