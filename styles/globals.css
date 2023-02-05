@@ -5,7 +5,7 @@
 	--red: #FC836D;
 	--green: #1DC37E;
 	--green-light: #CFF8E4;
-	--font-family: "Noto Sans KR", sans-serif;
+	--font-family: 'Noto Sans', sans-serif;
 }
 
 * {
@@ -16,6 +16,7 @@
 
 html,
 body {
+	font-family: var(--font-family);
 	overflow-x: hidden;
 	color: var(--black);
 	background: #F5F6F8;
