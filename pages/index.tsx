@@ -1,4 +1,4 @@
-import { Htag, Button, Ptag, Tag } from '@/components';
+import { Htag, Button, Ptag, Tag, Rating } from '@/components';
 import { useEffect, useState } from 'react';
 
 export default function Home(): JSX.Element {
@@ -21,6 +21,7 @@ export default function Home(): JSX.Element {
 			<Tag size='s' color='ghost'>Small</Tag>
 			<Tag size='m' color='red'>Medium</Tag>
 			<Tag color='primary'>Medium</Tag>
+			<Rating rating={4} />
 		</div>
 	);
 }
