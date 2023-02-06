@@ -5,11 +5,10 @@ export default function Home(): JSX.Element {
 	const [counter, setCounter] = useState<number>(0);
 
 	useEffect(() => {
-		console.log('Counter ' + counter);
-		return function cleanup(){
-			console.log('Cleanup '+ counter);
-		};
-	}, [counter]);
+		if(counter > 0){
+			console.log(counter);
+		}
+	});
 
 	return (
 		<div>
