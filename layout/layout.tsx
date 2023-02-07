@@ -1,5 +1,4 @@
 import { LayoutProps } from './layout.props';
-import cn from 'classnames';
 import styles from './Layout.module.css';
 import { Footer } from './Footer/Footer';
 import { Sidebar } from './Sidebar/Sidebar';
@@ -19,7 +18,7 @@ const Layout = ({children, ...props }: LayoutProps): JSX.Element => {
 	);
 };
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent) => {
+export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
 	return function withLayoutComponent(props: T): JSX.Element {
 		return (
 			<Layout>
