@@ -1,0 +1,26 @@
+[33m068af10[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: Product Component Grid
+[33m3c29422[m HEAD@{1}: commit: Search and Product Components
+[33mf595529[m HEAD@{2}: commit: useReducer
+[33me049305[m HEAD@{3}: commit: Page Codding Part2
+[33mfc59ed4[m HEAD@{4}: commit: Added Regex
+[33m3ddc053[m HEAD@{5}: commit: Products page: alias page was divided into TopPageComponent
+[33m8b98717[m HEAD@{6}: commit: Link, useRouter and so on
+[33me8c66c0[m HEAD@{7}: commit: Site typesetting
+[33mdfd9473[m HEAD@{8}: commit: Context
+[33m132f270[m HEAD@{9}: commit: SSR: getStaticProps and getStaticPaths
+[33mf37bb26[m HEAD@{10}: commit: CSS GRID
+[33mcf5dc93[m HEAD@{11}: commit: HOC: layout and withLayout
+[33meebc634[m HEAD@{12}: commit: Rating part2
+[33m6c9059c[m HEAD@{13}: commit: Rating part1
+[33m8455827[m HEAD@{14}: commit: Rules of Hooks
+[33m9e4ead6[m HEAD@{15}: commit: useEffect
+[33mb6894af[m HEAD@{16}: commit: useState
+[33me37233c[m HEAD@{17}: commit: Added two components: Tag and Ptag
+[33m175abfb[m HEAD@{18}: commit: Added SVG Component and ClassNames Package
+[33m9a72347[m HEAD@{19}: commit: Added Google Fonts
+[33m4c3cf27[m HEAD@{20}: commit: Fonts&Colors, First Component
+[33mcab015c[m HEAD@{21}: commit: Head and Document components
+[33m28658a4[m HEAD@{22}: commit: Added VSCode logging
+[33m4143c83[m HEAD@{23}: commit: Added and configurated Stylelint
+[33m095e9f1[m HEAD@{24}: commit: testcommit
+[33m8839621[m HEAD@{25}: commit (initial): First commit
