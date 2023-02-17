@@ -75,7 +75,7 @@ export const Menu = (): JSX.Element => {
 		return (
 			pages.map(p => {
 				return (
-					<Link  href={`/${route}/${p.alias}`} key={`/${route}/${p.alias}`} legacyBehavior>
+					<Link  href={`/${route}/${p.alias}`} key={p._id} legacyBehavior>
 						<a className={cn(styles.thirdLevel, {
 							[styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath
 						})}>
