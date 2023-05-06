@@ -14,8 +14,11 @@ import { useState } from 'react';
 
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+
 	const { register, control, handleSubmit, formState: {errors}, reset} = useForm<IReviewForm>();
+
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
+	
 	const [error, setError] = useState<string>();
 
 	const onSubmit = async (formData: IReviewForm) => {

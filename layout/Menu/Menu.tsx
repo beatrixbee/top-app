@@ -6,6 +6,7 @@ import styles from './Menu.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { firstLevelMenu } from '@/helpers/helpers';
+import { motion } from 'framer-motion';
 
 export const Menu = (): JSX.Element => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
@@ -20,6 +21,35 @@ export const Menu = (): JSX.Element => {
 	};
 
 	const router = useRouter();
+
+	const variants = {
+		visible: {
+			marginBottom: 20,
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.1 
+			}
+		},
+		hidden: {
+			// added transition to 'hidden'
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.01 
+			},
+			marginBottom: 0
+		}
+	};
+
+	const variantsChildren = {
+		visible: {
+			opacity: 1,
+			height: 29 //should reconsider due to the different size of children item
+		},
+		hidden: {
+			opacity: 0,
+			height: 0
+		}
+	};
 
 	const buildFirstLevel = () => {
 		return (
@@ -59,11 +89,15 @@ export const Menu = (): JSX.Element => {
 									m._id.secondCategory
 								}
 							</div>
-							<div className={cn(styles.secondLevelBlock, {
-								[styles.secondLevelBlockOpened]: m.isOpened
-							})}>
+							<motion.div 
+								layout
+								variants={variants}
+								initial={m.isOpened ? 'visible' : 'hidden'}
+								animate={m.isOpened ? 'visible' : 'hidden'}
+								className={cn(styles.secondLevelBlock)}
+							>
 								{buildThirdLevel(m.pages, menuItem.route)}
-							</div>
+							</motion.div>
 						</div>
 					);
 				})}
@@ -75,13 +109,18 @@ export const Menu = (): JSX.Element => {
 		return (
 			pages.map(p => {
 				return (
-					<Link  href={`/${route}/${p.alias}`} key={p._id} legacyBehavior>
-						<a className={cn(styles.thirdLevel, {
-							[styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath
-						})}>
-							{p.category}
-						</a>
-					</Link>
+					<motion.div 
+						key={p._id}
+						variants={variantsChildren}		
+					>
+						<Link  href={`/${route}/${p.alias}`} legacyBehavior>
+							<a className={cn(styles.thirdLevel, {
+								[styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath
+							})}>
+								{p.category}
+							</a>
+						</Link>
+					</motion.div>
 				);
 			})
 		);
