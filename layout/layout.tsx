@@ -3,7 +3,7 @@ import styles from './Layout.module.css';
 import { Footer } from './Footer/Footer';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Header } from './Header/Header';
-import { Component, FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { AppContextProvider, IAppContext } from '@/context/app.context';
 import { Up } from '@/components';
 
