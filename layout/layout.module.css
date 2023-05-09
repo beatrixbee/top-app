@@ -12,7 +12,6 @@
 
 .header{
 	grid-area: header;
-	display: none;
 }
 
 .sidebar{
@@ -28,9 +27,6 @@
 }
 
 @media (max-width: 765px) {
-	.header{
-		display: block;
-	}
 	.sidebar{
 		display: none !important;
 	}
@@ -40,6 +36,7 @@
 		"header"
 		"body"
 		"footer";
+		gap: 10px;
 	}
 	.body {
 		padding: 15px;
