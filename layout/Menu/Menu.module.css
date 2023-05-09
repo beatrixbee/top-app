@@ -26,8 +26,9 @@
 	text-transform: uppercase;
 	color: var(--grey-dark);
 	font-size: 12px;
-	line-height: 16px;
 	font-weight: 300;
+
+	outline-offset: -1px;
 }
 
 .secondBlock{
@@ -47,8 +48,9 @@
 	cursor: pointer;
 	color: var(--grey-dark);
 	font-size: 14px;
-	line-height: 19px;
 	font-weight: 500;
+
+	outline-offset: -1px;
 }
 
 .thirdLevel:hover,
