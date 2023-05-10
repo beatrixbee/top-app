@@ -29,9 +29,10 @@ export const Product = motion(forwardRef(({ product, className, ...props}: Produ
 	};
 
 	const variants = {
-		visible: {opacity: 1, height: 'auto'},
-		hidden: {opacity: 0, height: 0}
+		visible: {opacity: 1, height: 'auto', overflow: 'hidden'},
+		hidden: {opacity: 0, height: 0, overflow: 'hidden'}
 	};
+
 	return (
 		<div className={cn(className)} {...props} ref={ref}>
 			<Card className={styles.product}>
@@ -90,12 +91,16 @@ export const Product = motion(forwardRef(({ product, className, ...props}: Produ
 					</Button>
 				</div>
 			</Card>
-			<motion.div
+			<motion.div 
 				animate={isReviewOpened ? 'visible' : 'hidden'}
 				variants={variants}
 				initial={'hidden'}
 			>
-				<Card color='blue' className={cn(styles.reviews)} ref={reviewRef} tabIndex={isReviewOpened ? 0 : 1}>
+				<Card color='blue' 
+					className={cn(styles.reviews)}
+					ref={reviewRef}
+					tabIndex={isReviewOpened ? 0 : -1}
+				>
 					{product.reviews.map(r => (
 						<div key={r._id}>
 							<Review review={r} />
