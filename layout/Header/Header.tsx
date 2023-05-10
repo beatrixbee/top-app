@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './Header.module.css';
 import Logo from '../logo.svg';
 import { ButtonIcon } from '@/components';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 export const Header = ({className, ...props }: HeaderProps): JSX.Element => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 	const router = useRouter(); 
-
+	const shouldReduceMotion = useReducedMotion();
 	useEffect(()=> {
 		setIsOpened(false);
 	}, [router]);
@@ -25,7 +25,7 @@ export const Header = ({className, ...props }: HeaderProps): JSX.Element => {
 			}
 		},
 		closed: {
-			opacity: 0,
+			opacity: shouldReduceMotion ? 1 : 0,
 			x: '100%',
 		}
 	};
