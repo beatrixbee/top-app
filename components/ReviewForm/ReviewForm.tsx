@@ -13,7 +13,7 @@ import { API } from '@/helpers/API';
 import { useState } from 'react';
 
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({ productId, className, isOpened, ...props }: ReviewFormProps): JSX.Element => {
 
 	const { register, control, handleSubmit, formState: {errors}, reset} = useForm<IReviewForm>();
 
@@ -44,6 +44,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					{...register('name', { required: { value: true, message: 'Заполните имя'} })}
 					placeholder='Имя' 
 					error={errors.name}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				
 				<Input
@@ -51,6 +52,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					placeholder='Заголовок отзыва'
 					className={styles.title}
 					error={errors.title}
+					tabIndex={isOpened ? 0 : -1}
 				/> 
 				
 				<div className={styles.rating}>
@@ -75,9 +77,10 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					placeholder='Текст отзыва'
 					className={styles.description}
 					error={errors.description}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary'>Отправить</Button>
+					<Button appearance='primary' tabIndex={isOpened ? 0 : -1}>Отправить</Button>
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>
